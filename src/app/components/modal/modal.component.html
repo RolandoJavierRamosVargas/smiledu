@@ -1,0 +1,81 @@
+
+<div class="container">
+
+    <button class="btn btn-outline-primary" routerLink="/inicio">Regresar</button>
+
+    <hr>
+    <hr>
+    <form [formGroup]="forma" (ngSubmit)="submit()">
+
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="form-group">
+                    <label>NOMBRE</label>
+                    <input formControlName="nombre" class="form-control" type="text" value="">
+                </div>
+
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <select formControlName="cargo" class="form-control">
+                        <option value="default">Cargo</option>
+                        <option value="docente">Docente</option>
+                        <option value="director">Director</option>
+                        <option value="auxiliar">Auxiliar</option>
+                        <option value="coordinador">Coordinador</option>
+                    </select>
+                </div>
+            
+            </div>
+
+                
+            
+
+            <div class="col col-md-6">
+                <div>
+                    <label>Apellido</label>
+                    <input formControlName="apellido" class="form-control" type="text">
+                </div>
+                
+                <div>
+                    <label>Correo</label>
+                    <input formControlName="correo" class="form-control" type="text">
+                </div>
+
+                <div>
+                    <label>Salario</label>
+                    <mat-slider formControlName="salario" min="1" max="100" step="1" ></mat-slider>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+              <button type="submit" class="btn btn-outline-primary">
+                Guardar
+              </button>
+            </div>
+          </div>
+
+    </form>  
+
+    <div class="container">
+        <button class="btn btn-outline-primary">Cancelar</button>
+
+
+        <button class="btn btn-outline-success">Actualizar</button>
+
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        <strong>Estado </strong> {{ forma.status }}
+    </div>
+
+
+</div>
+
+
+
+
+  

@@ -1,0 +1,46 @@
+<div class="container">
+
+    <button class="btn btn-primary float-right" routerLink="/modal/nuevo">Registrar</button>
+
+    <table class="table">
+
+
+        <thead class="table-head">
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Estado</th>
+                <th>Cargo</th>
+                <th>Correo</th>
+                <th>Ver</th>
+                <th>Borrar</th>
+            </tr>
+            
+
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas ">
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellido}}</td>
+                <td>{{persona.estado}}</td>
+                <td>{{persona.cargo}}</td>
+                <td>{{persona.correo}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="getPersona(persona.id)"> Ver </button>
+
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deletePersona(persona.id)" > Eliminar </button>
+                </td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    
+
+    
+
+</div>
